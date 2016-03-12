@@ -31,6 +31,8 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.btnGO = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -66,6 +68,20 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // folderBrowserDialog1
+            // 
+            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
+            // 
+            // btnGO
+            // 
+            this.btnGO.Location = new System.Drawing.Point(948, 12);
+            this.btnGO.Name = "btnGO";
+            this.btnGO.Size = new System.Drawing.Size(75, 23);
+            this.btnGO.TabIndex = 3;
+            this.btnGO.Text = "GO";
+            this.btnGO.UseVisualStyleBackColor = true;
+            this.btnGO.Click += new System.EventHandler(this.btnGO_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +90,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1035, 615);
+            this.Controls.Add(this.btnGO);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.webBrowser1);
@@ -91,6 +108,8 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button btnGO;
     }
 }
 
