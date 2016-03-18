@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows;
 
 namespace ImgFav2
 {
@@ -16,6 +17,8 @@ namespace ImgFav2
         public PageType PageType { get; set; }
 
         public List<ImgLink> Links { get; set; }
+
+        private string _path = "";
 
         public frmMain()
         {
@@ -75,6 +78,23 @@ namespace ImgFav2
 
         private void btnGO_Click(object sender, EventArgs e)
         {
+            var fbd = new FolderBrowserDialog();
+            bool correctFolder = false;
+            while (!correctFolder)
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    correctFolder = true;
+                }
+                else
+                {
+                    MessageBox.Show("Choose a correct folder.");
+                }
+            }
+
+            _path = fbd.SelectedPath;
             switch (PageType)
             {
                 case PageType.Favorite:
@@ -86,7 +106,7 @@ namespace ImgFav2
                     
             }
 
-            ImageSelector selector = new ImageSelector(Links);
+            ImageSelector selector = new ImageSelector(Links, _path);
             selector.Show();
             this.Hide();
         }

@@ -11,7 +11,7 @@ namespace ImgFav2
 
     }
 
-    enum PageType
+    public enum PageType
     {
         None=1,
         Favorite,
